@@ -1,65 +1,54 @@
-<div class="flex h-screen">
+<div class="flex h-screen font-open-sans">
   <!-- Side Navigation -->
   <div class="bg-gray-800 text-white w-64">
-    <ul class="p-4">
-      <li class="mb-2">
+    <h2 class="text-2xl font-bold text-white text-center my-14">OpenSky</h2>
+
+    <ul class="mb-[25vh]">
+      <li class="mb-2 text-right p-6 hover:bg-gray-400 hover:text-black">
         <a class="block" routerLink="/dashboard">Dashboard</a>
       </li>
-      <li class="mb-2">
-        <a class="block" routerLink="/profile">Profile</a>
+      <li class="mb-2 text-right p-6 hover:bg-gray-400 hover:text-black">
+        <a class="block" routerLink="/dashboard/profile">Profile</a>
       </li>
-      <!-- Add more navigation links as needed -->
+      <li class="mb-2 text-right p-6 hover:bg-gray-400 hover:text-black">
+        <a class="block" routerLink="/dashboard/settings">Settings</a>
+      </li>
+      <li class="mb-2 text-right p-6 hover:bg-gray-400 hover:text-black">
+        <a class="block" routerLink="/dashboard/messages">Messages</a>
+      </li>
     </ul>
+
+    <button
+      class="block text-center w-full hover:underline"
+      (click)="openModal()"
+    >
+      Logout
+    </button>
+
+    <app-modal *ngIf="isModalOpen">
+      <div class="text-center text-black">
+        <h2 class="text-2xl font-bold mb-4">Logout</h2>
+        <p class="text-lg mb-6">Are you sure you want to logout?</p>
+        <div class="flex justify-center">
+          <button
+            class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 mr-4 rounded"
+            (click)="logout()"
+          >
+            Logout
+          </button>
+          <button
+            class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded"
+            (click)="closeModal()"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </app-modal>
   </div>
 
   <!-- Main Content -->
   <div class="flex flex-col flex-1 bg-gray-100">
-    <header class="bg-white p-4">
-      <h1 class="text-xl font-semibold">Dashboard</h1>
-    </header>
-    <main class="p-4">
-      <div>
-        <mat-table [dataSource]="tableData" matSort>
-          <ng-container matColumnDef="id">
-            <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{ row.id }} </mat-cell>
-          </ng-container>
-
-          <ng-container matColumnDef="airport">
-            <mat-header-cell *matHeaderCellDef> Airport </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{ row.airport }} </mat-cell>
-          </ng-container>
-
-          <ng-container matColumnDef="currentTime">
-            <mat-header-cell *matHeaderCellDef> Current Time </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{ row.currentTime }} </mat-cell>
-          </ng-container>
-
-          <ng-container matColumnDef="departureTime">
-            <mat-header-cell *matHeaderCellDef>
-              Departure Time
-            </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{ row.departureTime }} </mat-cell>
-          </ng-container>
-
-          <ng-container matColumnDef="arrivalTime">
-            <mat-header-cell *matHeaderCellDef> Arrival Time </mat-header-cell>
-            <mat-cell *matCellDef="let row"> {{ row.arrivalTime }} </mat-cell>
-          </ng-container>
-
-          <!-- Define table header -->
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-
-          <!-- Define table rows -->
-          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-        </mat-table>
-
-        <mat-paginator
-          [length]="tableData.length"
-          [pageSizeOptions]="[10, 25, 100]"
-          showFirstLastButtons
-        ></mat-paginator>
-      </div>
-    </main>
+    <router-outlet></router-outlet>
   </div>
 </div>

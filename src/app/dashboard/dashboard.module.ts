@@ -4,9 +4,24 @@ import { DashboardComponent } from './dashboard.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
+import { IndexComponent } from './index/index.component';
+import { InProgressComponent } from './in-progress/in-progress.component';
+import { DashboardRoutingModule } from './dashboard-routing.module';
+import { ModalComponent } from '../modal/modal.component';
 
 @NgModule({
-  declarations: [DashboardComponent],
-  imports: [CommonModule, MatTableModule, MatSortModule, MatPaginatorModule],
+  declarations: [
+    DashboardComponent,
+    IndexComponent,
+    InProgressComponent,
+    ModalComponent,
+  ],
+  imports: [
+    CommonModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    DashboardRoutingModule,
+  ],
 })
 export class DashboardModule {}

@@ -1,27 +1,62 @@
-# Opensky
+# OpenSky
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
+Welcome to OpenSky! This is an Angular application for managing flights.
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. Clone the repository: `git clone https://github.com/ChukwudumebiOrji/angular-hamoye-assessment`
+2. Install the dependencies: `npm install`
 
-## Code scaffolding
+## Usage
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Start the development server: `npm run start`
+2. Open your browser and visit: `http://localhost:4200`
+3. Login email: john@doe.com password: password
 
-## Build
+## Scripts
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- `npm run start`: Starts the development server.
 
-## Running unit tests
+## Dependencies
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- `@angular/animations`: ^16.0.0
+- `@angular/cdk`: ^16.0.0
+- `@angular/common`: ^16.0.0
+- `@angular/compiler`: ^16.0.0
+- `@angular/core`: ^16.0.0
+- `@angular/forms`: ^16.0.0
+- `@angular/material`: ^16.0.0
+- `@angular/platform-browser`: ^16.0.0
+- `@angular/platform-browser-dynamic`: ^16.0.0
+- `@angular/router`: ^16.0.0
+- `axios`: ^1.4.0
+- `concurrently`: ^8.0.1
+- `json-server`: ^0.17.3
+- `rxjs`: ~7.8.0
+- `tslib`: ^2.3.0
+- `zone.js`: ~0.13.0
 
-## Running end-to-end tests
+## Dev Dependencies
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- `@angular-devkit/build-angular`: ^16.0.0
+- `@angular/cli`: ~16.0.0
+- `@angular/compiler-cli`: ^16.0.0
+- `@types/jasmine`: ~4.3.0
+- `autoprefixer`: ^10.4.14
+- `jasmine-core`: ~4.6.0
+- `karma`: ~6.4.0
+- `karma-chrome-launcher`: ~3.2.0
+- `karma-coverage`: ~2.2.0
+- `karma-jasmine`: ~5.1.0
+- `karma-jasmine-html-reporter`: ~2.0.0
+- `postcss`: ^8.4.23
+- `tailwindcss`: ^3.3.2
+- `typescript`: ~5.0.2
 
-## Further help
+## Contributing
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Contributions are welcome! Please create an issue or submit a pull request for any features, bug fixes, or improvements you would like to add.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
