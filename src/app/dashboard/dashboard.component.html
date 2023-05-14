@@ -1,0 +1,65 @@
+<div class="flex h-screen">
+  <!-- Side Navigation -->
+  <div class="bg-gray-800 text-white w-64">
+    <ul class="p-4">
+      <li class="mb-2">
+        <a class="block" routerLink="/dashboard">Dashboard</a>
+      </li>
+      <li class="mb-2">
+        <a class="block" routerLink="/profile">Profile</a>
+      </li>
+      <!-- Add more navigation links as needed -->
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="flex flex-col flex-1 bg-gray-100">
+    <header class="bg-white p-4">
+      <h1 class="text-xl font-semibold">Dashboard</h1>
+    </header>
+    <main class="p-4">
+      <div>
+        <mat-table [dataSource]="tableData" matSort>
+          <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{ row.id }} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="airport">
+            <mat-header-cell *matHeaderCellDef> Airport </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{ row.airport }} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="currentTime">
+            <mat-header-cell *matHeaderCellDef> Current Time </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{ row.currentTime }} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="departureTime">
+            <mat-header-cell *matHeaderCellDef>
+              Departure Time
+            </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{ row.departureTime }} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="arrivalTime">
+            <mat-header-cell *matHeaderCellDef> Arrival Time </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{ row.arrivalTime }} </mat-cell>
+          </ng-container>
+
+          <!-- Define table header -->
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+          <!-- Define table rows -->
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </mat-table>
+
+        <mat-paginator
+          [length]="tableData.length"
+          [pageSizeOptions]="[10, 25, 100]"
+          showFirstLastButtons
+        ></mat-paginator>
+      </div>
+    </main>
+  </div>
+</div>
